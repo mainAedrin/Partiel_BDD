@@ -38,3 +38,7 @@ BEGIN
 END; //
 
 DELIMITER ;
+
+BONUS : 
+Les améliorations possibles seraient de faire des procédures stockées qui donnerait le classement par pays par exemple.
+Elle pourrait être améliorée en vue des JO en ajoutant les médailles obtnues/les médailles par pays.
