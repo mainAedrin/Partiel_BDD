@@ -24,3 +24,17 @@ WHERE (part.id_athlete, part.id_epreuve) NOT IN (
     FROM run
 );
 Je crois que la table particiaption me permet de faire le lie nmais quand j'execute ma requête je n'ai aucun retour.
+
+Question 5:
+DELIMITER // 
+CREATE TRIGGER trg_ajouter_note
+BEFORE INSERT ON note
+FOR EACH ROW
+BEGIN
+	IF NEW.valeur < 0 OR NEW.valeur > 100 THEN
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'La note doit être comprise entre 0 et 100';
+    END IF;
+END; //
+
+DELIMITER ;
